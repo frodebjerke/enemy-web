@@ -1,0 +1,11 @@
+{
+  "name": "enemy-web",
+  "version": "0.0.1",
+  "description": "SPA web application for the enemy application. The app that bitch you into doing the things you should have been doing all along.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "author": "frode bjerke",
+  "license": "ISC"
+}
