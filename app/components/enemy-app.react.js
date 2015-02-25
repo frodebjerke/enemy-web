@@ -33,7 +33,7 @@ var EnemyApp = React.createClass({
   },
 
   _onChange: function () {
-    this.setState(getTodoState);
+    this.setState(getTaskState());
   }
 })
 

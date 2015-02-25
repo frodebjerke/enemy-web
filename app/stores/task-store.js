@@ -19,21 +19,21 @@ function create(text) {
 }
 
 var TaskStore = assign({}, EventEmitter.prototype, {
-  getAll:  () => {
+  getAll:  function (){
     return _tasks;
   },
-  emitChange: () => {
+  emitChange: function (){
     this.emit(CHANGE_EVENT);
   },
-  addChangeListener: (callback) => {
+  addChangeListener: function (callback) {
     this.on(CHANGE_EVENT, callback);
   },
-  removeChangeListener: (callback) => {
+  removeChangeListener: function (callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
 });
 
-AppDispatcher.register((action) => {
+AppDispatcher.register(function (action) {
   var text;
 
   switch(action.actionType) {

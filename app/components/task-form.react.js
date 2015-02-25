@@ -3,7 +3,9 @@ var React = require('react');
 var TaskForm = React.createClass({
 
   getInitialState: function () {
-    value: this.props.value || ''
+    return {
+      value: this.props.value || ''
+    }
   },
 
   render: function () {
@@ -37,4 +39,6 @@ var TaskForm = React.createClass({
     }
   }
 
-})
+});
+
+module.exports = TaskForm;
