@@ -1,44 +1,27 @@
 var React = require('react');
+var TextInput = require('./text-input.react');
+var _ = require('lodash');
 
 var TaskForm = React.createClass({
 
   getInitialState: function () {
     return {
-      value: this.props.value || ''
+      title: this.props.title || ''
     }
   },
 
   render: function () {
     return (
-      <input
-        onBlur={this._save}
-        onChange={this._onChange}
-        onKeyDown={this._onKeyDown}
-        value={this.state.value}
-        autoFocus={true}
-        />
+      <TextInput
+        value={this.state.title}
+        onChange={this._onChange("title")}
+         />
     );
   },
 
-  _save: function () {
-    this.props.onSave(this.state.value);
-    this.setState({
-      value: ''
-    });
-  },
-
-  _onChange: function (event) {
-    this.setState({
-      value: event.target.value
-    });
-  },
-
-  _onKeyDown: function (event) {
-    if (event.keyCode === 13) {
-      this._save();
-    }
-  }
-
+  _onChange: _.curry(function (key, value) {
+    console.log("_onChange", key, value);
+  })
 });
 
 module.exports = TaskForm;
