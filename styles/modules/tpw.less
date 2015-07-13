@@ -1,0 +1,65 @@
+
+
+.nmy-tpw {
+    position: relative;
+}
+
+.nmy-tpw-meta {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: @gutter--small;
+    background-color: fadeout(@white, 15%);
+}
+
+.nmy-tpw-month {
+    position: relative;
+    height: 100vh;
+    background-color: #ccc;
+}
+
+.nmy-tpw-month-meta {
+    position: absolute;
+    right: 0;
+    top: 6rem;
+    width: 5rem;
+}
+.nmy-tpw-month:nth-child(even) {
+    background-color: @green--lightest;
+}
+
+.nmy-tpw-weeks {
+    bottom: @gutter--xlarge;
+    position: absolute;
+    width: 100vh;
+    max-width: 100vh;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.nmy-tpw-week {
+    min-width: 7rem;
+    text-align: center;
+}
+
+.nmy-tpw-visual {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.nmy-tpw-bar {
+    line-height: 0.3rem;
+    max-height: 1.5vh;
+    width: 2rem;
+    background-color: @green--darkest;
+    margin: 0.1rem 0;
+    border: solid 0.1rem @black;
+}
+
+.nmy-tpw-bar--none {
+    .nmy-tpw-bar;
+    background-color: @green--lightest;
+}
